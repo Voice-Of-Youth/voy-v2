@@ -27,7 +27,7 @@
                 </form>
             </ul>
         </li>
-        <li>
+        <!-- <li>
             <a href="">Rating</a>
             <ul>
                 <li><a href="">1 out of 5</a></li>
@@ -36,7 +36,7 @@
                 <li><a href="">4 out of 5</a></li>
                 <li><a href="">5 out of 5</a></li>
             </ul>
-        </li>
+        </li> -->
     </ul>
 </body>
 </html>
