@@ -262,7 +262,7 @@
           <div class="footer-link-items">
             <h2 class="footer-title">Help</h2>
             <a href="../application/view/faq.php" class="link footer-link">FAQ's</a>
-            <a href="../application/view/report.html" class="link footer-link">Report</a>
+            <a href="../application/view/report.php" class="link footer-link">Report</a>
           </div>
           <div class="footer-link-items">
             <h2 class="footer-title">About us</h2>
