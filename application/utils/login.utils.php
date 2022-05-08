@@ -35,12 +35,12 @@
             
         $hashedpwd = $udExists["Password"];
 
-        $checkedPassword = password_verify($password, $hashedpwd);
+        $isPasswordVerified = password_verify($password, $hashedpwd);
 
-        if($checkedPassword) {
+        if(!$isPasswordVerified) {
             header("location: ../view/login.php?error=wrongpassword");
             exit();
-        } else if(!$checkedPassword) {
+        } else if($isPasswordVerified) {
             session_start();
             $_SESSION["userid"] = $udExists["UserID"];
             $_SESSION["username"] = $udExists["UserName"];
