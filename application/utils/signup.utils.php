@@ -55,7 +55,7 @@
         $name = explode(" ",$fullname);
         $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
 
-        mysqli_stmt_bind_param($stmt, "sssss", $name[0], $name[1], $username, $email, $password);
+        mysqli_stmt_bind_param($stmt, "sssss", $name[0], $name[1], $username, $email, $hashedpwd);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
     }

@@ -36,6 +36,10 @@
     }
     
     createUser($conn, $username, $fullname, $password, $email);
+    session_start();
+    $_SESSION["useremail"] = $email;
+    $_SESSION["userfullname"] = $fullname;
+    include("signupmailer.inc.php");
 
     mysqli_close($conn);
   } else {
