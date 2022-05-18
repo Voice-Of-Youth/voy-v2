@@ -30,15 +30,11 @@
       
       <ul class="navbar-menu menu">
         <li class="search-menu-item">
-          <div class="navbar-link link search-styling">
-            <div id="search" class="search-bar">
-              <input type="text" class="search-text" placeholder="Search...">
-              <button class="search-submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <div class="search-dropdown" id="hits-container"></div>
-            </div>
-            <span id="search-placeholder">Search</span>
+          <div class='searchContainer'}>
+            <button class='iconButton'>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input class='searchInput' placeholder='search articles' />
           </div>
         </li>
         <?php 
