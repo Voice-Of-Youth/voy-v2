@@ -81,6 +81,7 @@
                 <div class='buttons'>
                     <button type="submit" name="login" class="custom-button" id="signin-button" >Sign In</button>
                 </div>
+                <a href="../view/forgotpassword.php">Reset your Account</a>
             </form>
             <?php
                 if(isset($_GET["error"])) {
