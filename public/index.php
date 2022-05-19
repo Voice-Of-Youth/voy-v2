@@ -1,3 +1,4 @@
+session_start();
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,16 +30,20 @@
       </div>
       
       <ul class="navbar-menu menu">
+      
         <li class="search-menu-item">
+        <form action="../application/controller/searchResult.php" method="POST">
           <div class='searchContainer'>
-            <button class='iconButton'>
+            <button class='iconButton' name="submit-search">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <input class='searchInput' placeholder='search articles' />
+            <input name="search" class='searchInput' placeholder='search articles' />
           </div>
+          <form>
         </li>
+   
         <?php 
-          session_start();
+         
           if(isset($_SESSION["userid"])) {
             echo "<li class=\"navbar-menu-item\">";
             // echo "<a href='../application/view/login.php'>Bookmarks</a>";
