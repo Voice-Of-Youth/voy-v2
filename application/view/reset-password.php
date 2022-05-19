@@ -10,12 +10,12 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <?php
-                    include('../controller/connection.php');
+                    require('../controller/connection.inc.php');
                     if (isset($_GET["key"]) && isset($_GET["email"]) && isset($_GET["action"]) && ($_GET["action"] == "reset") && !isset($_POST["action"])) {
                         $key = $_GET["key"];
                         $email = $_GET["email"];
                         $curDate = date("Y-m-d H:i:s");
-                        $query = mysqli_query($con, "SELECT * FROM `password_reset_temp` WHERE `key`='" . $key . "' and `email`='" . $email . "';");
+                        $query = mysqli_query($conn, "SELECT * FROM `password_reset_temp` WHERE `key`='" . $key . "' and `email`='" . $email . "';");
                         $row = mysqli_num_rows($query);
                         if ($row == "") {
                             $error .= '<h2>Invalid Link</h2>';
@@ -68,9 +68,15 @@
                         if ($error != "") {
                             echo $error;
                         } else {
+                            $sql = "UPDATE `user` SET `Password`= ? WHERE ``.`Email`= ?;";
 
-                            $pass1 = md5($pass1);
-                            mysqli_query($conn, "UPDATE User SET `password` = '" . $pass1 . "', `trn_date` = '" . $curDate . "' WHERE `email` = '" . $email . "'");
+                            $stmt = mysqli_stmt_init($conn);
+                            mysqli_stmt_prepare($stmt, $sql);
+                            
+                            $hashedpwd = password_hash($pass1, PASSWORD_DEFAULT);
+
+                            mysqli_stmt_bind_param($stmt, "ss", $hashedpwd, $email);
+                            mysqli_stmt_execute($stmt);
 
                             mysqli_query($conn, "DELETE FROM `password_reset_temp` WHERE `email` = '$email'");
 
