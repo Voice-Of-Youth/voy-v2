@@ -30,7 +30,7 @@
       
       <ul class="navbar-menu menu">
         <li class="search-menu-item">
-          <div class='searchContainer'}>
+          <div class='searchContainer'>
             <button class='iconButton'>
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
