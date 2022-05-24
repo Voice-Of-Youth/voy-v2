@@ -84,10 +84,11 @@ h1 {
 }
 
 input {
-    padding: 0px 10px;
+    padding: 5px 10px;
     width: 80px;
-    height: 15px;
+    height: 35px;
     font-size: 12px;
+    margin-left: 5px;
 }
 
 body {

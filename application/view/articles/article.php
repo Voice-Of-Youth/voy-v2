@@ -1,8 +1,3 @@
-<?php
-include 'connection.inc.php';
-?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -71,7 +66,11 @@ include 'connection.inc.php';
       <div class="article-content">
         <div class="leftcolumn">
           <div class="card">
-            <!-- <?php
+          <?php
+include '../../controller/connection.inc.php';
+?>
+
+            <?php
             $title=mysqli_real_escape_string($conn,$_GET['title']);
             $date=mysqli_real_escape_string($conn,$_GET['date']);
             
@@ -89,7 +88,7 @@ include 'connection.inc.php';
             
             }
           }
-            ?> -->
+            ?> 
             <p>
               Adolescents in our country are growing up in a world where circumstances are quite different now ,concerning the benefits and risks in life, from those of their parents or grandparents. They need proper support not only to navigate the biological, social and cognitive transitions of their life but also to prevent cases of sexual harassment and abuse which are now increasing at an alarming rate.
               Sex education is an essential tool to help them learn about a broad range of topics related to biological, psychological and sociocultural perspectives of individual beings as well as a key intervention to prevent and reduce sexual harassment, assault and abuse. It just needs to be delivered in an age-appropriate and engaging way based on science and facts.
