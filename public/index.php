@@ -1,6 +1,3 @@
-<php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,8 +11,8 @@ session_start();
   </head>
 <body>
   <?php 
+    session_start();
     if(isset($_POST['logout'])) {
-      session_start();
       session_unset();
       session_destroy();
     }
