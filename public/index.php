@@ -34,12 +34,12 @@ session_start();
       <ul class="navbar-menu menu">
       
         <li class="search-menu-item">
-        <form action="../application/controller/searchResult.php" method="POST">
+        <form action="../application/view/searchResult.php" method="POST">
           <div class='searchContainer'>
             <button class='iconButton' name="submit-search">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <input name="search" class='searchInput' placeholder='search articles' />
+            <input name="search" class='searchInput' placeholder='articles keyword' />
           </div>
           <form>
         </li>
@@ -264,22 +264,23 @@ session_start();
         <div class="footer-link-wrapper">
           <div class="footer-link-items">
             <h2 class="footer-title">Help</h2>
+            <a href="#" class="link footer-link">How it works</a>
             <a href="../application/view/faq.php" class="link footer-link">FAQ's</a>
             <a href="../application/view/report.php" class="link footer-link">Report</a>
           </div>
           <div class="footer-link-items">
             <h2 class="footer-title">About us</h2>
             <a href="../application/view/aboutus.php" class="link footer-link">About Us</a>  
+            <a href="../application/view/contactus.php" class="link footer-link">Contact Us</a>
             <a href="#" class="link footer-link">Blogs</a>
             <a href="#" class="link footer-link">Testimonials</a>
           </div>
         </div>
         <div class="footer-link-wrapper">
           <div class="footer-link-items">
-            <h2 class="footer-title">Careers</h2>
-            <a href="../application/view/writers.php" class="link footer-link">Writers</a>
-            <a href="../application/view/contactus.php" class="link footer-link">Contact Us</a>
-            <a href="#" class="link footer-link">How it works</a>
+            <h2 class="footer-title">Services</h2>
+            <a href="../application/view/writers.php" class="link footer-link">Authoring</a>
+            
           </div>
           <div class="footer-link-items">
             <h2 class="footer-title">Legal</h2>
