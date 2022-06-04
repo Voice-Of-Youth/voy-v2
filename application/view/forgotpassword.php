@@ -5,10 +5,24 @@ use PHPMailer\PHPMailer\Exception;
 ?>
 <html>
     <head>
+    <link rel="stylesheet" href="../../public/styles/main.css">
         <title>Password Recovery using PHP and MySQL</title>
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
+
+    <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../../public/index.php" class="link" id="navbar-logo">VOY</a>
+      
+      <div class="navbar-hamburger" id="mobile-bar-icon">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </div>
+      
+    </div>
+  </nav>
 
         <div class="container-fluid">
             <div class="row">
@@ -63,14 +77,22 @@ use PHPMailer\PHPMailer\Exception;
                             $mail = new PHPMailer(true);
                             
                             try {
-                                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-                                $mail->IsSMTP();
-                                $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                                $mail->SMTPAuth = true;
-                                $mail->Username   = 'voiceofyouth.ethiopia@gmail.com';                     //SMTP username
-                                $mail->Password   = 'voice4youth@ethiopia';                               //SMTP password
-                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                                $mail->Port = 465;
+                                // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                                // $mail->IsSMTP();
+                                // $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                                // $mail->SMTPAuth = true;
+                                // $mail->Username   = 'voiceofyouth.ethiopia@gmail.com';                     //SMTP username
+                                // $mail->Password   = 'voice4youth@ethiopia';                               //SMTP password
+                                // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                                // $mail->Port = 465;
+
+                                $mail-> isSMTP();
+                                $mail->SMTPAuth= true;
+                                $mail->SMTPSecure="tls";
+                                $mail->Host="smtp.gmail.com";
+                                $mail->Port=587;
+                                $mail->Username   = 'voiceofyouth.ethiopia@gmail.com';                   //SMTP username
+                                $mail->Password   = 'voice4youth@ethiopia';
                                 
                                 // Recipient
                                 $mail->setFrom('voiceofyouth.ethiopia@gmail.com', 'Voice of Youth');

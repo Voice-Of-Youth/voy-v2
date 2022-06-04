@@ -20,18 +20,6 @@
       </div>
       
       <ul class="navbar-menu menu">
-        <li class="search-menu-item">
-          <div class="navbar-link link search-styling">
-            <div id="search" class="search-bar">
-              <input type="text" class="search-text" placeholder="Search...">
-              <button class="search-submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <div class="search-dropdown" id="hits-container"></div>
-            </div>
-            <span id="search-placeholder">Search</span>
-          </div>
-        </li>
         <?php 
           session_start();
           if(isset($_SESSION["userid"])) {
@@ -81,7 +69,8 @@
                 <div class='buttons'>
                     <button type="submit" name="login" class="custom-button" id="signin-button" >Sign In</button>
                 </div>
-                <a href="../view/forgotpassword.php">Reset your Account</a>
+                <br/>
+                <a href="../view/forgotpassword.php">Forgot Password</a>
             </form>
             <?php
                 if(isset($_GET["error"])) {

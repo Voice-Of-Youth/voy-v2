@@ -22,18 +22,6 @@
       </div>
       
       <ul class="navbar-menu menu">
-        <li class="search-menu-item">
-          <div class="navbar-link link search-styling">
-            <div id="search" class="search-bar">
-              <input type="text" class="search-text" placeholder="Search...">
-              <button class="search-submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <div class="search-dropdown" id="hits-container"></div>
-            </div>
-            <span id="search-placeholder">Search</span>
-          </div>
-        </li>
         <?php 
           session_start();
           if(isset($_SESSION["userid"])) {
@@ -174,6 +162,6 @@
 
     
     <script src="../../public/js/main.js"></script>
-    <script src="../../public/js/auth.js"></script>
+    <!-- <script src="../../public/js/auth.js"></script> -->
   </body>
 </html>

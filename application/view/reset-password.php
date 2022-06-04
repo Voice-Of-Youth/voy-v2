@@ -1,9 +1,22 @@
 <html>
     <head>
+    <link rel="stylesheet" href="../../public/styles/main.css">
         <title>Reset Password</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
+
+    <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../../public/index.php" class="link" id="navbar-logo">VOY</a>
+      
+      <div class="navbar-hamburger" id="mobile-bar-icon">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </div>
+    </div>
+  </nav>
 
         <div class="container-fluid">
             <div class="row">
