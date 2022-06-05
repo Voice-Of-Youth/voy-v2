@@ -5,7 +5,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -112,7 +111,6 @@ _For Getting started on this project you first need to clone the VOY website fro
    ```sh
    composer install
    ```
-3. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -134,11 +132,11 @@ Different issues may arise while testing out this website.
   composer install
   ```
 
-Potential Solution include installing PHPMailer again.
+  Potential Solution include installing PHPMailer again.
 
 - _Issue related to PHPmailer not sending email to the user._
 
-You can try and install phpmailer again using the method mentioned above.
+  You can try and install phpmailer again using the method mentioned above.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
