@@ -137,6 +137,7 @@ When greeted with the front page You have the option to read the top rated Artic
   When we first try to access the admin page we will get redirected to the login page, where we have to log using email and password. After a successful login, you find the dashboard where one can find statistics and different activities made on the website. The next thing is the admin profile page where one can add/edit/delete admins that operate on the website.
 
   _Profile picture add and profile edit_
+  
   Once a user logs in into his/her account they will have the option to change their profile picture. To do that they can press the round profile icon and will be redirected to a page where they can change thier profile picture from the default picture. In that page they can also press the "Edit profile" button to further change thier account information (username, email...)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -151,6 +152,7 @@ When greeted with the front page You have the option to read the top rated Artic
     - Email: "natishimelisg@gmail.com"   Password: "123456"
 
   Sample Admin include: 
+
     - Email: "natnaelmenelik@gmail.com"   Password: "123456" 
   
 <p align="right">(<a href="#top">back to top</a>)</p>
