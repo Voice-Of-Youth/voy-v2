@@ -24,17 +24,16 @@
       </div>
       
       <ul class="navbar-menu menu">
-        <li class="search-menu-item">
-          <div class="navbar-link link search-styling">
-            <div id="search" class="search-bar">
-              <input type="text" class="search-text" placeholder="Search...">
-              <button class="search-submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <div class="search-dropdown" id="hits-container"></div>
-            </div>
-            <span id="search-placeholder">Search</span>
+        
+      <li class="search-menu-item">
+        <form action="../application/view/searchResult.php" method="POST">
+          <div class='searchContainer'>
+            <button class='iconButton' name="submit-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input name="search" class='searchInput' />
           </div>
+        </form>
         </li>
         <?php 
           session_start();

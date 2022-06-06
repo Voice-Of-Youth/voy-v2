@@ -26,17 +26,16 @@
       </div>
       
       <ul class="navbar-menu menu">
-        <li class="search-menu-item">
-          <div class="navbar-link link search-styling">
-            <div id="search" class="search-bar">
-              <input type="text" class="search-text" placeholder="Search...">
-              <button class="search-submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <div class="search-dropdown" id="hits-container"></div>
-            </div>
-            <span id="search-placeholder">Search</span>
+         
+      <li class="search-menu-item">
+        <form action="searchResult.php" method="POST">
+          <div class='searchContainer'>
+            <button class='iconButton' name="submit-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input name="search" class='searchInput' placeholder='articles keyword' />
           </div>
+        </form>
         </li>
         <?php 
           session_start();
@@ -99,7 +98,7 @@
                             </p>
                         </div>
                         <div class="about-image-container">
-                            <img class="image" src="../../resources/images/teams.svg.svg" alt="teams of image">
+                            <img class="image" src="../../public/images/teams.svg.svg" alt="teams of image">
                         </div>
                     </div>
                 </div>
@@ -109,7 +108,7 @@
 
                 <div class="services">
                     <div class="service-image">
-                        <img src="../../resources/images/articles-reading.svg" alt="articles-reading image">
+                        <img src="../../public/images/articles-reading.svg" alt="articles-reading image">
                     </div>
                     <div class="paragraph-holder">
                         <p> Have a positive self-image and have a respect for themselves.
@@ -120,7 +119,7 @@
 
                 <div class="services">
                     <div class="service-image">
-                        <img src="../../resources/images/blog.svg.svg" alt="blog picture">
+                        <img src="../../public/images/blog.svg.svg" alt="blog picture">
                     </div>
 
                     <div>
@@ -131,7 +130,7 @@
 
                 <div class="services">
                     <div class="service-image">
-                        <img src="../../resources/images/create-contents.svg" alt="create-content picture">
+                        <img src="../../public/images/create-contents.svg" alt="create-content picture">
                     </div>
                     <div>
                         <p> Combat sexual exploitation and the misuse of sex.
@@ -155,16 +154,16 @@
                     </div>
                     <div class="image-wrapper">
                         <div class="image-container">
-                            <img src="../../resources/images/sexed.jpeg" alt="picture about us">
+                            <img src="../../public/images/sexed.jpeg" alt="picture about us">
                         </div>
                         <div class="image-container">
-                            <img src="../../resources/images/image1.jpg" alt="picture about us">
+                            <img src="../../public/images/image1.jpg" alt="picture about us">
                         </div>
                         <div class="image-container">
-                            <img src="../../resources/images/image2.jpg" alt="picture about us">
+                            <img src="../../public/images/image2.jpg" alt="picture about us">
                         </div>
                         <div class="image-container">
-                            <img src="../../resources/images/image3.jpg" alt="picture about us">
+                            <img src="../../public/images/image3.jpg" alt="picture about us">
                         </div>
                     </div>
                 </div>
