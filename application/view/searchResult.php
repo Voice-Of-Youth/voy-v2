@@ -15,12 +15,75 @@ include '../controller/connection.inc.php';
 </head>
 
 <body>
-  <nav>
+  
+<nav class="navbar">
     <div class="navbar-container">
-      <a href="../../public/index.php" class="link" id="navbar-logo">VOY</a>
-    <ul>
-      <li>
-        <form  method="POST" action="searchResult.php" name="sorting">
+      <a href="../../index.php" class="link" id="navbar-logo">VOY</a>
+      
+      <div class="navbar-hamburger" id="mobile-bar-icon">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </div>
+      
+      <ul class="navbar-menu menu">
+        <!-- <li class="search-menu-item">
+          <form action="../application/view/searchResult.php" method="POST">
+            <div class='searchContainer'>
+              <button class='iconButton' name="submit-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <input name="search" class='searchInput' placeholder='articles keyword' />
+            </div>
+          </form>
+        </li> -->
+        <?php
+          if(isset($_SESSION["userid"])) {
+            $image = $_SESSION["userprofileimg"];
+            echo "<li class=\"navbar-menu-item\">";
+            // echo "<a href='../application/view/login.php'>Bookmarks</a>";
+            echo "<a href='../application/view/login.php' class='navbar-link link'>";
+            echo "<i class='fa-solid fa-bookmark'></i>";
+            echo "<span>Favorites</span>";
+            echo "</a>";
+            echo "</li>";
+            // echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
+            // echo "<a href='../application/view/profile.php'>Signin</a>";
+            // echo "<a href='../application/view/profile.php' class='btn-link link'>Profile</a>"; 
+            // echo "</li>";
+            echo "<li class= 'user-icon'> <a href= '../application/view/profile.php' > <img src= 'images/uploads/$image'>  </a> </li>";
+            echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
+            // echo "<a href='../application/utils/logout.utils.php'>Logout</a>";
+            echo "<form class='navbar-menu-item navbar-btn' method='post'>";
+            echo "  <button class='btn-link link' type='submit' name='logout'>Logout</button>";
+            echo "</form>";
+            // echo "<a href='../application/utils/logout.utils.php' class='btn-link link'>Log out</a>"; 
+            echo "</li>";
+          } else {
+            echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
+            // echo "<a href='../application/view/login.php'>Signin</a>";
+              echo "<a href='../application/view/login.php' class='btn-link link'>Sign In</a>"; 
+            echo "</li>";
+            echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
+            // echo "<a href='../application/view/login.php'>Signin</a>";
+              echo "<a href='../application/view/contactus.php' class='btn-link link'>Contact Us</a>"; 
+            echo "</li>";
+          }
+        ?>    
+      </ul>
+    </div>
+  </nav>
+  
+
+
+<div class="blog-container">
+  <div class="uwelcome">
+    <h1 id="welcome"> welcome to the Search page</h1>
+  </div>
+  <div class="search-sort">
+    <div class="filter_section">
+      <div class="sorting">
+    <form  method="POST" action="searchResult.php" name="sorting">
            <label for="blog">   &nbsp; &nbsp; Sort by: </label>
                     <select class="form-control" name="blog">
                     <option value="">none</option>
@@ -30,20 +93,9 @@ include '../controller/connection.inc.php';
                 </select>
                 <input value="Sort" class="sort-button" name="sort" type="submit">
         </form>
-      </li>
-    </ul>
 </div>
-  </nav>
-
-
-<div class="blog-container">
-  <div class="uwelcome">
-    <h1 id="welcome"> welcome to the Search page</h1>
-  </div>
-  <div class="search-sort">
-    <div class=filter_section>
               <form role="filter" method="POST" action="searchResult.php" name="filter">
-              <h5><button name="filter_search" type="submit"> Filter:</button></h5>
+              
                   <h6><strong>Writers List</strong></h6>
                   <hr>
               <?php
@@ -73,8 +125,9 @@ include '../controller/connection.inc.php';
                   echo "No writers found";
               }
               ?>
+              <h5><button name="filter_search" type="submit"><strong> Filter:</strong></button></h5>
               </form>
- </div>  
+      </div>  
      
       <div class="search-section">
             <h2>Searched Blogs </h2>

@@ -63,6 +63,10 @@
             // echo "<a href='../application/view/login.php'>Signin</a>";
               echo "<a href='../application/view/login.php' class='btn-link link'>Sign In</a>"; 
             echo "</li>";
+            echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
+            // echo "<a href='../application/view/login.php'>Signin</a>";
+              echo "<a href='../application/view/contactus.php' class='btn-link link'>Contact Us</a>"; 
+            echo "</li>";
           }
         ?>    
       </ul>
