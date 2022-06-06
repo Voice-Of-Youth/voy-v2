@@ -190,4 +190,4 @@ below are the resources we found helpful and would like to give credit to.
 [issues-url]: https://github.com/Voice-Of-Youth/voy-v2/issues
 [license-shield]: https://img.shields.io/github/license/Voice-Of-Youth/voy-v2.svg?style=for-the-badge
 [license-url]: https://github.com/Voice-Of-Youth/voy-v2/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/images/voy.png
