@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -65,13 +66,36 @@
       <div class="article-content">
         <div class="leftcolumn">
           <div class="card">
+          <?php
+include '../../controller/connection.inc.php';
+?>
+
+            <?php
+            $title=mysqli_real_escape_string($conn,$_GET['title']);
+            $date=mysqli_real_escape_string($conn,$_GET['date']);
+            
+            $sql="SELECT*FROM blog WHERE blogName='$title'AND createdAt= '$date'";
+            $result=mysqli_query($conn, $sql);
+            $queryResult=mysqli_num_rows($result);
+            
+             if($queryResult>0){
+            while($row=mysqli_fetch_assoc($result)){
+              echo "<div class='blog-box'>
+              <h3>".$row['blogName']."</h3>
+              <p>".$row['Content']."</p>
+              <p>".$row['createdAt']."</p>
+              </div>";
+            
+            }
+          }
+            ?> 
             <p>
               Adolescents in our country are growing up in a world where circumstances are quite different now ,concerning the benefits and risks in life, from those of their parents or grandparents. They need proper support not only to navigate the biological, social and cognitive transitions of their life but also to prevent cases of sexual harassment and abuse which are now increasing at an alarming rate.
               Sex education is an essential tool to help them learn about a broad range of topics related to biological, psychological and sociocultural perspectives of individual beings as well as a key intervention to prevent and reduce sexual harassment, assault and abuse. It just needs to be delivered in an age-appropriate and engaging way based on science and facts.
               However, this important subject is still taboo in our conservative society due to some misconceptions or lack of appropriate knowledge about sex ed. Here are some misconceptions that need to be addressed.
             </p>
             <!--  <div class="fakeimg" style="height:200px;">Image</div> -->
-            <img src="sexed.jpeg">
+            <img src="../../public/images/sexed.jpeg">
             <h3>It encourages sex</h3>
             <p>Critics suggest sex ed will encourage children to have sex, yet research suggests the opposite is true. A study by the Guttmacher Institute found that "there is now clear evidence that sexuality education programmes can help young people to delay sexual activity."  A UNESCO report found children who are taught CSE tend to have less sex, fewer sexual partners and reduced sexual risk-taking.</p>
             <h3>It normalizes teenage sex</h3>
@@ -86,7 +110,7 @@
             <p>Some people argue that sex before marriage is a sin, so the only thing children should be taught about sex is abstinence. Studies in some countries, however, suggest that abstinence-only programmes do not reduce teenage pregnancies. Moreover, they leave children uninformed about the risks of sex and sexually transmitted infections.<br>
             Sex ed. does, in fact, teach abstinence. But it also covers the "what if". It recognises that premarital sex happens. In Ethiopia, for instance, a good amount of teenagers are sexually active before turning 18, the local age of consent. Rather than seeing sex ed. as inherently anti-religious, conservative voices can be brought into the planning process.</p>
 
-            <h2>Advantages of sex ed.</h2>
+            <h2>Advantages of sexed.</h2>
             <h3>In early years</h3>
             <li>Body positive</li>
             <li>Healthy gender identity</li>
@@ -101,6 +125,65 @@
             <li>No unwanted pregnancy</li>
             <li>No STD/STIs</li>
             </p>
+            <p>Body image refers to how an individual sees their own body and how attractive they feel themselves to be.
+              Many people have concerns about their body image. These concerns often focus on weight, skin, hair, or the shape or size of a certain body part.
+              However, body image does not only stem from what we see in the mirror. According to some studies, a range of beliefs, experiences, and generalizations also contribute.
+              Throughout history, people have given importance to the beauty of the human body. Society, media, social media, and popular culture often shape these views, and this can affect how a person sees their own body. However, popular standards are not always helpful.<br>
+              Constant bombardment by media images can cause people to feel uncomfortable about their body, leading to distress and ill health. It can also affect work, social life, and other aspects of life. This article will look at positive and negative body image and provide some tips on how to improve body image</p>
+   
+            <h3>What does body image mean?</h3>
+            <p>Body image refers to a persons emotional attitudes, beliefs, and perceptions of their own body. Experts describe body image relates to:</p>
+            <ul>
+              <li>what a person believes about their appearance</li>
+              <li>how they feel about their body, height, weight, and shape</li>
+              <li>how they sense and control their body as they move</li>
+            </ul>
+            <h3>What is a positive body image?</h3>
+            <p>Having a positive body image includes:
+              <ul>
+                <li>accepting and appreciating the whole of ones body, including how it looks and what it can do</li>
+                <li> having a broad concept of beauty</li>
+                <li>having a body image that is stable</li>
+                <li>having inner positivity</li>
+              </ul>
+              Some have asked whether accepting a larger body may deter people from taking action to be healthy. However, body positivity is not just about the size or appearance of the body. Confidence and control are also key factors.
+            </p>
+            <h3>What is a negative body image?</h3>
+            <p>A person with a negative body image feels dissatisfied with their body and their appearance. The person may:
+            <ul>
+              <li>compare themselves with others and feel inadequate when doing so</li>
+              <li>feel ashamed or embarrassed</li>
+              <li>lack confidence</li>
+              <li>feel uncomfortable or awkward in their body</li>
+              <li>see parts of their body, such as their nose, in a distorted way</li>
+            </ul>
+              In some cases, having a negative body image can lead to the development of mental health issues, such as depression.
+              A person may also pursue unnecessary surgery, unsafe weight loss habits- such as crash dieting- or an inappropriate use of hormones to build muscles. There is a strong link between eating disorders and negative body image, according to the NEDA.
+              Some people develop BDD. A person with BDD sees a part or all of their body in a negative way. They may ask for cosmetic surgery to “correct” their nose size, for example, when to everyone else, it appears normal.<br>
+              Where does a negative body image come from?
+              A body image does not develop in isolation. Culture, family, and friends all convey positive and negative messages about the body.
+              The media, peers, and family members can all influence a person’s body image. They can encourage people, even from a young age, to believe that there is an ideal body. The image is often an unnatural one. The fashion industry also sets an unhealthy example when they employ underweight models to display their products.
+              Discrimination based on race, size, ability, gender orientation, and age also plays a role. Exposure to daily microaggressions at work and in society can cause people to feel that they do not measure up or that they are somehow lacking.
+              Illness and accidents can also have an impact. Skin conditions, a mastectomy for breast cancer or a limb amputation can cause people to rethink how they appear to themselves and to others.<br>
+              All of these factors can impact a person's mental and physical well-being.
+              Body disparaging conversations include "fat talk," which refers to when people talk about how "fat" they look or feel. These conversations can lead to further negative feelings, low mood, or negative eating patterns.
+              </p>
+
+            <h3>Tips for improving body image</h3>
+              <p>
+                <ul>
+                  <li>Spend time with people who have a positive outlook.</li>
+                  <li>Practice positive self-talk. Say, "my arms are strong" rather than, "my arms are flappy"</li>
+                  <li>Wear comfortable clothes that look good on you.</li>
+                  <li>Avoid comparing yourself with other people.</li>
+                  <li>Remember that beauty is not just about appearance.</li>
+                  <li>Appreciate what your body can do, such as laughing, dancing, and creating.</li>
+                  <li>Be actively critical of media messages and images that make you feel as if you should be different.</li>
+                  <li>Make a list of 10 things you like about yourself.</li>
+                  <li>See yourself as a whole person, not an imperfect body part.</li>
+                  <li>Do something nice for your body, such as getting a massage or a haircut.</li>
+                </ul>
+              </p>
           </div>
         </div>
         <div class="rightcolumn">
@@ -125,7 +208,7 @@
         </div>
       </div>
     </div>
-
+    
     <footer class="footer">
       <div class="footer-container">
           <div class="footer-links">
