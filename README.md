@@ -84,8 +84,6 @@ A library we used in this projects
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -114,9 +112,9 @@ _For Getting started on this project you first need to clone the VOY website fro
    composer install
    ```
 4. When starting the website you will see it in local server i.e Localhost. you can copy the code below 
-  ```sh
-   localhost/voy-v2/
-   ```  
+    ```sh
+    localhost/voy-v2/
+    ```  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
