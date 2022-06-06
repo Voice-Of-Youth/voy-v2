@@ -44,7 +44,7 @@
           } else {
             echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
             // echo "<a href='../application/view/login.php'>Signin</a>";
-            echo "<a href='./admin/login.php' class='btn-link link'>Login as Admin</a>"; 
+            echo "<a href='./admin/login.php' class='btn-link link'>Admin Page</a>"; 
             echo "</li>";
 
             echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
