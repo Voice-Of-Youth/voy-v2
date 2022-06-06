@@ -47,7 +47,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#issues">Issues when using This project</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#SampleData">Sample Data</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -128,9 +128,34 @@ When greeted with the front page You have the option to read the top rated Artic
   the search area is used to enable the user to search for a specific article.then it will take it to the search page where there are results realated to what the user search for it in link format.in addition there are 
   two fuctionalities on the search page since the page prints out all the related articles, and difficlult for the user to look for each result so instead it can filter out the results my the authorswho wrote the article also it can sort the results by the title or content in this way it can decrease the work.
 
+  _sign up and sign in_
+
+  A user can sign in by using the sign in button in the top right corner, which will take them to our sign in page. If the user does not have an account, he or she can click the sign up button to be taken to the sign up page. Once there the user will be presented with a sign up form to be filled. After filling the appropriate information the user can sign in using his email and password.
+  
+  _VOY admin page_
+  
+  When we first try to access the admin page we will get redirected to the login page, where we have to log using email and password. After a successful login, you find the dashboard where one can find statistics and different activities made on the website. The next thing is the admin profile page where one can add/edit/delete admins that operate on the website.
+
+  _Profile picture add and profile edit_
+  Once a user logs in into his/her account they will have the option to change their profile picture. To do that they can press the round profile icon and will be redirected to a page where they can change thier profile picture from the default picture. In that page they can also press the "Edit profile" button to further change thier account information (username, email...)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
+<!-- SAMPLE DATA -->
+## SampleData
+
+  Here we have listed the sample datas we have stored in our database. 
+
+  Sample users include: 
+
+    - Email: "nmtkadesse@gmail.com"      Password:  "testing"
+    - Email: "natishimelisg@gmail.com"   Password: "123456"
+
+  Sample Admin include: 
+    - Email: "natnaelmenelik@gmail.com"   Password: "123456" 
+  
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ISSUES -->
 ## Issues
 
 Different issues may arise while testing out this website. 
@@ -147,6 +172,10 @@ Different issues may arise while testing out this website.
 
   You can try and install phpmailer again using the method mentioned above.
 
+ - _Browser Incompatibility_
+   
+   Try using chrome for viewing the website and development.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTACT -->
@@ -156,9 +185,9 @@ if you have any question or other inquiries on the project use this email to con
 Nathnael Shimelis - natishimelisg@gmail.com
 Nathnael Mekonnen - nmktadesse@gmail.com
 Mahlet Assbu - massbu@gmail.com
-Nahom Temam 
-Mahlet Tizazu
-Natnael Menelik
+Nahom Temam - exopain2930@gmail.com
+Mahlet Tizazu - mahletalmi@gmail.com
+Natnael Menelik - natnaelmenelik3@gmail.com
 
 Project Link: [https://github.com/Voice-Of-Youth/voy-v2](https://github.com/Voice-Of-Youth/voy-v2)
 
