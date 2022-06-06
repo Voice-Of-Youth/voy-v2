@@ -84,8 +84,6 @@ A library we used in this projects
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -107,10 +105,16 @@ _For Getting started on this project you first need to clone the VOY website fro
    ```sh
    https://github.com/Voice-Of-Youth/voy-v2.git
    ```
-2. Go into the directory and install all the dependencies
+2. The website should be cloned in htdocs folder inside the XAMPP installation folder
+
+3. Go into the directory and install all the dependencies
    ```sh
    composer install
    ```
+4. When starting the website you will see it in local server i.e Localhost. you can copy the code below 
+    ```sh
+    localhost/voy-v2/
+    ```  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -118,6 +122,11 @@ _For Getting started on this project you first need to clone the VOY website fro
 ## Usage
 
 When greeted with the front page You have the option to read the top rated Articles in the platform. You can create an account for added benefits like writting which will be unlocked after completing a screening interview.
+
+  _The search Functionalities_
+
+  the search area is used to enable the user to search for a specific article.then it will take it to the search page where there are results realated to what the user search for it in link format.in addition there are 
+  two fuctionalities on the search page since the page prints out all the related articles, and difficlult for the user to look for each result so instead it can filter out the results my the authorswho wrote the article also it can sort the results by the title or content in this way it can decrease the work.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

@@ -126,15 +126,20 @@ body {
 
 .search-sort {
     display: flex;
-    flex-direction: row;
+    width: 75%;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .search-section {
-    margin-left: 100px;
+    margin-left: 50px;
     -ms-flex-align: end;
+}
+
+.sorting {
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 .filter-section {
