@@ -5,61 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../../public/styles/articles/style.css">
 	  <link rel="stylesheet" type="text/css" href="../../../public/styles/main.css">
+	  <link rel="stylesheet" type="text/css" href="../../../public/styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Why sexual education is important | articles - VOY</title>
   </head>
   <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-        <a href="../../../public/index.php" class="link" id="navbar-logo">VOY</a>
-        
-        <div class="navbar-hamburger" id="mobile-bar-icon">
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-        </div>
-        
-        <ul class="navbar-menu menu">
-            <li class="search-menu-item">
-            <div class="navbar-link link search-styling">
-                <div id="search" class="search-bar">
-                <input type="text" class="search-text" placeholder="Search...">
-                <button class="search-submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <div class="search-dropdown" id="hits-container"></div>
-                </div>
-                <span id="search-placeholder">Search</span>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="../../../index.php" class="link" id="navbar-logo">VOY</a>
+      
+      <div class="navbar-hamburger" id="mobile-bar-icon">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </div>
+      
+      <ul class="navbar-menu menu">
+        <li class="search-menu-item">
+          <form action="../../searchResult.php" method="POST">
+            <div class='searchContainer'>
+              <button class='iconButton' name="submit-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <input name="search" class='searchInput' placeholder='articles keyword' />
             </div>
-            </li>
-            <?php 
-            session_start();
-            if(isset($_SESSION["userid"])) {
-                echo "<li class=\"navbar-menu-item\">";
-                echo "<a href='../../view/login.php'>bookmarks</a>";
-                // echo "<a href= \"../../../application/view/login.php\" class=\"navbar-link link\">";
-                echo "<i class=\"fa-solid fa-bookmark\"></i>";
-                echo "<span>Favorites</span>";
-                echo "</a>";
-                echo "</li>";
-                echo "<li id=\"nav-button-dynamic\" class=\"navbar-menu-item navbar-btn\">"; 
-                echo "<a href='../../view/profile.php'>Signin</a>";
-                // echo "<a href=\"../../../application/view/profile.php\" class=\"btn-link link\">Profile</a>"; 
-                echo "</li>";
-                echo "<li id=\"nav-button-dynamic\" class=\"navbar-menu-item navbar-btn\">"; 
-                echo "<a href='../../utils/logout.utils.php'>Logout</a>";
-                // echo "<a href=\"../../../application/utils/logout.utils.php\" class=\"btn-link link\">Log out</a>"; 
-                echo "</li>";
-            } else {
-                echo "<li id=\"nav-button-dynamic\" class=\"navbar-menu-item navbar-btn\">"; 
-                echo "<a href='../../view/signup.php'>Sign Up</a>";
-                // echo "<a href=\"../../../application/view/login.php\" class=\"btn-link link>Sign In</a>"; 
-                echo "</li>";
-            }
-            ?>    
-        </ul>
-        </div>
-    </nav>
+          </form>
+        </li>
+        <?php 
+          session_start();
+          if(isset($_SESSION["userid"])) {
+            $image = $_SESSION["userprofileimg"];
+            echo "<li class=\"navbar-menu-item\">";
+            // echo "<a href='../application/view/login.php'>Bookmarks</a>";
+            echo "<a href='../application/view/login.php' class='navbar-link link'>";
+            echo "<i class='fa-solid fa-bookmark'></i>";
+            echo "<span>Favorites</span>";
+            echo "</a>";
+            echo "</li>";
+            // echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
+            // echo "<a href='../application/view/profile.php'>Signin</a>";
+            // echo "<a href='../application/view/profile.php' class='btn-link link'>Profile</a>"; 
+            // echo "</li>";
+            echo "<li class= 'user-icon'> <a href= '../profile.php' > <img src= '../../../public/images/uploads/$image'>  </a> </li>";
+            echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
+            // echo "<a href='../application/utils/logout.utils.php'>Logout</a>";
+            echo "<form class='navbar-menu-item navbar-btn' method='post'>";
+            echo "  <button class='btn-link link' type='submit' name='logout'>Logout</button>";
+            echo "</form>";
+            // echo "<a href='../application/utils/logout.utils.php' class='btn-link link'>Log out</a>"; 
+            echo "</li>";
+          } else {
+            echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
+            // echo "<a href='../application/view/login.php'>Signin</a>";
+              echo "<a href='../application/view/login.php' class='btn-link link'>Sign In</a>"; 
+            echo "</li>";
+          }
+        ?>    
+      </ul>
+    </div>
+  </nav>
 
     <div class="articles-container">
       <h1 class="article-header">Why sexual education is important</h1>
@@ -71,31 +75,33 @@ include '../../controller/connection.inc.php';
 ?>
 
             <?php
-            $title=mysqli_real_escape_string($conn,$_GET['title']);
-            $date=mysqli_real_escape_string($conn,$_GET['date']);
+            // $title=mysqli_real_escape_string($conn,$_GET['title']);
+            // $date=mysqli_real_escape_string($conn,$_GET['date']);
             
-            $sql="SELECT*FROM blog WHERE blogName='$title'AND createdAt= '$date'";
-            $result=mysqli_query($conn, $sql);
-            $queryResult=mysqli_num_rows($result);
+            // $sql="SELECT*FROM blog WHERE blogName='$title'AND createdAt= '$date'";
+          //   $result=mysqli_query($conn, $sql);
+          //   $queryResult=mysqli_num_rows($result);
             
-             if($queryResult>0){
-            while($row=mysqli_fetch_assoc($result)){
-              echo "<div class='blog-box'>
-              <h3>".$row['blogName']."</h3>
-              <p>".$row['Content']."</p>
-              <p>".$row['createdAt']."</p>
-              </div>";
+          //    if($queryResult>0){
+          //   while($row=mysqli_fetch_assoc($result)){
+          //     echo "<div class='blog-box'>
+          //     <h3>".$row['blogName']."</h3>
+          //     <p>".$row['Content']."</p>
+          //     <p>".$row['createdAt']."</p>
+          //     </div>";
             
-            }
-          }
+          //   }
+          // }
             ?> 
             <p>
               Adolescents in our country are growing up in a world where circumstances are quite different now ,concerning the benefits and risks in life, from those of their parents or grandparents. They need proper support not only to navigate the biological, social and cognitive transitions of their life but also to prevent cases of sexual harassment and abuse which are now increasing at an alarming rate.
               Sex education is an essential tool to help them learn about a broad range of topics related to biological, psychological and sociocultural perspectives of individual beings as well as a key intervention to prevent and reduce sexual harassment, assault and abuse. It just needs to be delivered in an age-appropriate and engaging way based on science and facts.
               However, this important subject is still taboo in our conservative society due to some misconceptions or lack of appropriate knowledge about sex ed. Here are some misconceptions that need to be addressed.
+          </br>
+          </br>
             </p>
             <!--  <div class="fakeimg" style="height:200px;">Image</div> -->
-            <img src="../../public/images/sexed.jpeg">
+            <img src="../../../public/images/sexed.jpeg" style = "text-align: center">
             <h3>It encourages sex</h3>
             <p>Critics suggest sex ed will encourage children to have sex, yet research suggests the opposite is true. A study by the Guttmacher Institute found that "there is now clear evidence that sexuality education programmes can help young people to delay sexual activity."  A UNESCO report found children who are taught CSE tend to have less sex, fewer sexual partners and reduced sexual risk-taking.</p>
             <h3>It normalizes teenage sex</h3>
@@ -210,63 +216,63 @@ include '../../controller/connection.inc.php';
     </div>
     
     <footer class="footer">
-      <div class="footer-container">
-          <div class="footer-links">
-              <div class="footer-link-wrapper">
-                  <div class="footer-link-items">
-                      <h2 class="footer-title">Help</h2>
-                      <a href="../FAQ.html" class="link footer-link">FAQ's</a>
-                      <a href="../report.html" class="link footer-link">Report</a>
-                  </div>
-                  <div class="footer-link-items">
-                      <h2 class="footer-title">About us</h2>
-                      <a href="#" class="link footer-link">Blogs</a>
-                      <a href="#" class="link footer-link">Testimonials</a>
-                      <a href="../aboutus.html" class="link footer-link">About Us</a>
-                      
-                  </div>
-              </div>
-              <div class="footer-link-wrapper">
-                  <div class="footer-link-items">
-                      <h2 class="footer-title">Careers</h2>
-                      <a href="../writers.html" class="link footer-link">Writers</a>
-                      <a href="#" class="link footer-link">How it works</a>
-                      <a href="../contactus.html" class="link footer-link">Contact Us</a>
-                  </div>
-                  <div class="footer-link-items">
-                      <h2 class="footer-title">Legal</h2>
-                      <a href="#" class="link footer-link">Terms</a>
-                      <a href="#" class="link footer-link">Services</a>
-                      <a href="#" class="link footer-link">Privacy</a>
-                  </div>
-              </div>
-          </div>
-          <section class="social-media">
-              <div class="social-media-wrap">
-                  <div class="footer-logo">
-                      <a href="../../../index.html" class="link" id="footer-logo">VOY</a>
-                  </div>
-                  <p class="website-rights">&copy; Voice of Youth <script>document.write(new Date().getFullYear())</script>. All rights reserved</p>
-                  <div class="social-icons">
-                      <a href="#" class="social-icon-link link" target="_blank">
-                          <i class="fa-brands brand fa-facebook"></i>
-                      </a>
+        <div class="footer-container">
+        <div class="footer-links">
+            <div class="footer-link-wrapper">
+            <div class="footer-link-items">
+                <h2 class="footer-title">Help</h2>
+                <a href="../faq.php" class="link footer-link">FAQ's</a>
+                <a href="../report.php" class="link footer-link">Report</a>
+            </div>
+            <div class="footer-link-items">
+                <h2 class="footer-title">About us</h2>
+                <a href="../aboutus.php" class="link footer-link">About Us</a>  
+                <a href="#" class="link footer-link">Blogs</a>
+                <a href="#" class="link footer-link">Testimonials</a>
+            </div>
+            </div>
+            <div class="footer-link-wrapper">
+            <div class="footer-link-items">
+                <h2 class="footer-title">Careers</h2>
+                <a href="../writers.php" class="link footer-link">Writers</a>
+                <a href="../contactus.php" class="link footer-link">Contact Us</a>
+                <a href="#" class="link footer-link">How it works</a>
+            </div>
+            <div class="footer-link-items">
+                <h2 class="footer-title">Legal</h2>
+                <a href="#" class="link footer-link">Terms</a>
+                <a href="#" class="link footer-link">Services</a>
+                <a href="#" class="link footer-link">Privacy</a>
+            </div>
+            </div>
+        </div>
+        
+        <section class="social-media">
+            <div class="social-media-wrap">
+            <div class="footer-logo">
+                <a href="../../../public/index.php" class="link" id="footer-logo">VOY</a>
+            </div>
+            <p class="website-rights">&copy; Voice of Youth <script>document.write(new Date().getFullYear())</script>. All rights reserved</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon-link link" target="_blank">
+                <i class="fa-brands brand fa-facebook"></i>
+                </a>
 
-                      <a href="#" class="social-icon-link link" target="_blank">
-                          <i class="fa-brands brand fa-instagram"></i>
-                      </a>
+                <a href="#" class="social-icon-link link" target="_blank">
+                <i class="fa-brands brand fa-instagram"></i>
+                </a>
 
-                      <a href="#" class="social-icon-link link" target="_blank">
-                          <i class="fa-brands brand fa-twitter"></i>
-                      </a>
-                      
-                      <a href="#" class="social-icon-link link" target="_blank">
-                          <i class="fa-brands brand fa-telegram"></i>
-                      </a>
-                  </div>
-              </div>
-          </section>
-      </div>
+                <a href="#" class="social-icon-link link" target="_blank">
+                <i class="fa-brands brand fa-twitter"></i>
+                </a>
+                
+                <a href="#" class="social-icon-link link" target="_blank">
+                <i class="fa-brands brand fa-telegram"></i>
+                </a>
+            </div>
+            </div>
+        </section>
+        </div>
     </footer>
 
     <script src="../../../public/js/main.js"></script>

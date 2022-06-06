@@ -39,6 +39,7 @@
     session_start();
     $_SESSION["useremail"] = $email;
     $_SESSION["userfullname"] = $fullname;
+    $_SESSION["username"] = $username;
     include("signupmailer.inc.php");
 
     mysqli_close($conn);

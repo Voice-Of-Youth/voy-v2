@@ -51,6 +51,9 @@
         if(!mysqli_stmt_prepare($stmt, $sql)) {
             return false;
         }
+
+        $sql2= "INSERT INTO `image` ( `username`, `image`) VALUES ('$username', 'default_profile.png');";
+        mysqli_query($conn, $sql2);
         
         $name = explode(" ",$fullname);
         $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
@@ -58,4 +61,7 @@
         mysqli_stmt_bind_param($stmt, "sssss", $name[0], $name[1], $username, $email, $hashedpwd);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
+
+        session_start();
+        $_SESSION["userprofileimg"] = "default_profile.png"; 
     }
