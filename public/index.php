@@ -30,16 +30,19 @@
       
       <ul class="navbar-menu menu">
         <li class="search-menu-item">
-          <div class='searchContainer'>
-            <button class='iconButton'>
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-            <input class='searchInput' placeholder='search articles' />
-          </div>
+          <form action="../application/view/searchResult.php" method="POST">
+            <div class='searchContainer'>
+              <button class='iconButton' name="submit-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <input name="search" class='searchInput' placeholder='articles keyword' />
+            </div>
+          </form>
         </li>
         <?php 
           session_start();
           if(isset($_SESSION["userid"])) {
+            $image = $_SESSION["userprofileimg"];
             echo "<li class=\"navbar-menu-item\">";
             // echo "<a href='../application/view/login.php'>Bookmarks</a>";
             echo "<a href='../application/view/login.php' class='navbar-link link'>";
@@ -47,10 +50,11 @@
             echo "<span>Favorites</span>";
             echo "</a>";
             echo "</li>";
-            echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
+            // echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
             // echo "<a href='../application/view/profile.php'>Signin</a>";
-            echo "<a href='../application/view/profile.php' class='btn-link link'>Profile</a>"; 
-            echo "</li>";
+            // echo "<a href='../application/view/profile.php' class='btn-link link'>Profile</a>"; 
+            // echo "</li>";
+            echo "<li class= 'user-icon'> <a href= '../application/view/profile.php' > <img src= 'images/uploads/$image'>  </a> </li>";
             echo "<li id='nav-button-dynamic' class='navbar-menu-item navbar-btn'>"; 
             // echo "<a href='../application/utils/logout.utils.php'>Logout</a>";
             echo "<form class='navbar-menu-item navbar-btn' method='post'>";
@@ -215,7 +219,7 @@
           <h1 class="to-follow-header">People to follow</h1>
           <div class="peoples-container">
             <div class="people-wrapper">
-              <div class="user-icon-container">
+              <div class="user-icon">
                 <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTgxMTU0MTYyMjA4MTU0NzEy/therapist-westheimer-addressed-sexual-performance-issues-in-this-advice-series-photo-by-donna-svennevikwalt-disney-television-via-getty-images.jpg" alt="">
               </div>
               <div class="people-info">
@@ -225,7 +229,7 @@
               <button class="follow-button" onclick="follow(0)">follow</button>
             </div>
             <div class="people-wrapper">
-              <div class="user-icon-container">
+              <div class="user-icon">
                 <img src="https://m.media-amazon.com/images/M/MV5BNDQ3NGZlMDYtOTA1Mi00ZWJhLTliZTctMjQ0MWNkZGQ0OTEzXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg" alt="">
               </div>
               <div class="people-info">
@@ -235,7 +239,7 @@
               <button class="follow-button" onclick="follow(1)">follow</button>
             </div>
             <div class="people-wrapper">
-              <div class="user-icon-container">
+              <div class="user-icon">
                 <img src="https://i.guim.co.uk/img/media/2cbb7b18e8238dd463907a82cc7be7160360a1c9/1066_55_3689_2214/master/3689.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=142a0209a663880757df8b428e76680e" alt="">
               </div>
               <div class="people-info">
@@ -269,10 +273,8 @@
         </div>
         <div class="footer-link-wrapper">
           <div class="footer-link-items">
-            <h2 class="footer-title">Careers</h2>
-            <a href="../application/view/writers.php" class="link footer-link">Writers</a>
-            <a href="../application/view/contactus.php" class="link footer-link">Contact Us</a>
-            <a href="#" class="link footer-link">How it works</a>
+          <h2 class="footer-title">Services</h2>
+            <a href="../application/view/writers.php" class="link footer-link">Authoring</a>
           </div>
           <div class="footer-link-items">
             <h2 class="footer-title">Legal</h2>
