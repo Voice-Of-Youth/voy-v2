@@ -44,6 +44,12 @@
             session_start();
             $_SESSION["userid"] = $udExists["UserID"];
             $_SESSION["username"] = $udExists["UserName"];
+            
+            $username = $udExists["UserName"];
+
+            $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM image WHERE username = '$username'"));
+            $_SESSION["userprofileimg"] = $image;
+
             header("location: ../../index.php");
         }
     }
