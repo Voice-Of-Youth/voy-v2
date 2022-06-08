@@ -160,6 +160,8 @@ When greeted with the front page You have the option to read the top rated Artic
 <!-- ISSUES -->
 ## Issues
 
+! _A latest issue since the end of may 2022 is that less secure option inside google accounts is disabled. that will cause our phpmailer to not send messages to the users of our site._
+
 Different issues may arise while testing out this website. 
 
 - _Issue related to composer and PHPmailer not being installed correctly._
