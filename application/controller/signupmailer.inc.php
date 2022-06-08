@@ -26,13 +26,15 @@ try {
     $mail-> isSMTP();
     $mail->SMTPAuth= true;
     $mail->SMTPSecure="tls";
-    $mail->Host="smtp.gmail.com";
+    // $mail->SMTPSecure = 'ssl';
+    $mail->Host="smtp.mail.yahoo.com";
     $mail->Port=587;
-    $mail->Username   = 'voiceofyouth.ethiopia@gmail.com';                   //SMTP username
-    $mail->Password   = 'voice4youth@ethiopia';
+    $mail->Port       = 465;
+    $mail->Username   = 'voiceofyouth.ethiopia@yahoo.com';                   //SMTP username
+    $mail->Password   = 'pegadbixgzfbetzg';
 
     //Recipients
-    $mail->setFrom('voiceofyouth.ethiopia@gmail.com', 'Voice of Youth');
+    $mail->setFrom('voiceofyouth.ethiopia@yahoo.com', 'Voice of Youth');
     if(isset($_SESSION["useremail"])) {
         $mail->addAddress($_SESSION["useremail"], $_SESSION["userfullname"]);     //Add a recipient
     }
