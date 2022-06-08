@@ -207,7 +207,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (2,'Nahom','Temam','NahomTM','exopain2930@gmail.com','$2y$10$x2J.FwKy7BvFi0H9Cskj5uJxtYi5MLmwYbbo3Cz3lpeHS.R6ZWKWG',1,'2022-05-24 06:36:52'),(4,'Nati','mina','yared','natenael@email.com','$2y$10$lIQ28cjs7PpZ31AR2x8UEO6FHtmhJefXKvFsiWqpBh3M4ovqWmN.a',1,'2022-05-24 18:41:53'),(70,'Nathnael','Mekonnen','nmktad','nmtkadesse@gmail.com','$2y$10$.SY7k6E2cpnbH4L6eB8rE.c2HXyJptyTbPvjfZRaScSTpIDsvzu/W',1,'2022-06-06 14:04:24'),(71,'Nathnael','Shimelis','natishimelis','natishimelisg@gmail.com','$2y$10$8i7QuOrdP/pIIaqNyStgRuwfXk8HrQDZhZbfZdM94y0elC4WFQ0zK',1,'2022-06-06 14:04:32');
+INSERT INTO `user` VALUES (2,'Nahom','Temam','NahomTM','exopain2930@gmail.com','$2y$10$x2J.FwKy7BvFi0H9Cskj5uJxtYi5MLmwYbbo3Cz3lpeHS.R6ZWKWG',1,'2022-05-24 06:36:52'),(4,'Nati','mina','yared','natenael@email.com','$2y$10$lIQ28cjs7PpZ31AR2x8UEO6FHtmhJefXKvFsiWqpBh3M4ovqWmN.a',1,'2022-05-24 18:41:53'),(70,'Nathnael','Mekonnen','nmktad','nmktadesse@gmail.com','$2y$10$.SY7k6E2cpnbH4L6eB8rE.c2HXyJptyTbPvjfZRaScSTpIDsvzu/W',1,'2022-06-06 14:04:24'),(71,'Nathnael','Shimelis','natishimelis','natishimelisg@gmail.com','$2y$10$8i7QuOrdP/pIIaqNyStgRuwfXk8HrQDZhZbfZdM94y0elC4WFQ0zK',1,'2022-06-06 14:04:32');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 

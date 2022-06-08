@@ -48,6 +48,8 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#issues">Issues when using This project</a></li>
     <li><a href="#SampleData">Sample Data</a></li>
+     <li><a href="#Issues">Issues</a></li>
+    <li><a href="#DatabaseInfo">Database Information</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -148,7 +150,7 @@ When greeted with the front page You have the option to read the top rated Artic
 
   Sample users include: 
 
-    - Email: "nmtkadesse@gmail.com"      Password:  "testing"
+    - Email: "nmktadesse@gmail.com"      Password:  "testing"
     - Email: "natishimelisg@gmail.com"   Password: "123456"
 
   Sample Admin include: 
@@ -180,6 +182,16 @@ Different issues may arise while testing out this website.
    
    Try using chrome for viewing the website and development.
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- DATABASE INFORMATION-->
+## DatabaseInfo
+
+    serverName = 'localhost';
+    Database UserName = 'root';
+    Database Password = '';
+    Database Name = 'voy';
+  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTACT -->
