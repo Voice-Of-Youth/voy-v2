@@ -43,7 +43,9 @@
         } else if($isPasswordVerified) {
             session_start();
             $_SESSION["userid"] = $udExists["UserID"];
+            $_SESSION["email"] = $udExists["Email"];
             $_SESSION["username"] = $udExists["UserName"];
+            $_SESSION["IsWriter"] = $udExists["IsWriter"];
             
             $username = $udExists["UserName"];
 

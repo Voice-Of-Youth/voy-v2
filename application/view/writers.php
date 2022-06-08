@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Writers | Be a Verified Writer on VOY</title>
 </head>
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+    header("Location: ./login.php");
+}?>
 <body>
        <nav class="navbar">
     <div class="navbar-container">
@@ -33,7 +38,6 @@
           </div>
         </li>
         <?php 
-          session_start();
           if(isset($_SESSION["userid"])) {
             echo "<li class=\"navbar-menu-item\">";
             // echo "<a href='../application/view/login.php'>Bookmarks</a>";
@@ -70,7 +74,7 @@
         </div>
         <div class="image-background"></div>
         <div class="btn-wrapper">
-            <a href=""></a><button class="btn">Start Writing</button></a> 
+            <a href="Article.php"><button class="btn">Start Writing</button></a> 
         </div>
     </div>
 
