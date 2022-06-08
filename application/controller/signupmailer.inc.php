@@ -23,16 +23,28 @@ try {
     // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     // $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    $mail-> isSMTP();
-    $mail->SMTPAuth= true;
-    $mail->SMTPSecure="tls";
-    $mail->Host="smtp.gmail.com";
-    $mail->Port=587;
-    $mail->Username   = 'voiceofyouth.ethiopia@gmail.com';                   //SMTP username
-    $mail->Password   = 'voice4youth@ethiopia';
+
+    $mail->IsSMTP();   
+    $mail->SMTPDebug = false;                                          //Send using SMTP
+    $mail->Host       = 'smtp.mail.yahoo.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    // $mail->Username   = 'restaurantmysteria@yahoo.com';                     //SMTP username
+    // $mail->Password   = 'cgybsqosnsctuftr';                               //SMTP password
+    $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+    $mail->Port       = 465; 
+
+    // $mail-> isSMTP();
+    // $mail->SMTPAuth= true;
+    // $mail->SMTPSecure="tls";
+    // $mail->SMTPSecure = 'ssl';
+    // $mail->Host="smtp.mail.yahoo.com";
+    // $mail->Port=587;
+    // $mail->Port       = 465;
+    $mail->Username   = 'voiceofyouth.ethiopia@yahoo.com';                   //SMTP username
+    $mail->Password   = 'pegadbixgzfbetzg';
 
     //Recipients
-    $mail->setFrom('voiceofyouth.ethiopia@gmail.com', 'Voice of Youth');
+    $mail->setFrom('voiceofyouth.ethiopia@yahoo.com', 'Voice of Youth');
     if(isset($_SESSION["useremail"])) {
         $mail->addAddress($_SESSION["useremail"], $_SESSION["userfullname"]);     //Add a recipient
     }

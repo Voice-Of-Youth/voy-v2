@@ -86,16 +86,28 @@ use PHPMailer\PHPMailer\Exception;
                                 // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                                 // $mail->Port = 465;
 
-                                $mail-> isSMTP();
-                                $mail->SMTPAuth= true;
-                                $mail->SMTPSecure="tls";
-                                $mail->Host="smtp.gmail.com";
-                                $mail->Port=587;
-                                $mail->Username   = 'voiceofyouth.ethiopia@gmail.com';                   //SMTP username
-                                $mail->Password   = 'voice4youth@ethiopia';
+                                // $mail-> isSMTP();
+                                // $mail->SMTPAuth= true;
+                                // $mail->SMTPSecure="tls";
+                                // // $mail->SMTPSecure = 'ssl';
+                                // $mail->Host="smtp.mail.yahoo.com";
+                                // $mail->Port=587;
+                                // $mail->Port       = 465;
+
+                                $mail->IsSMTP();   
+                                $mail->SMTPDebug = false;                                          //Send using SMTP
+                                $mail->Host       = 'smtp.mail.yahoo.com';                     //Set the SMTP server to send through
+                                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                                // $mail->Username   = 'restaurantmysteria@yahoo.com';                     //SMTP username
+                                // $mail->Password   = 'cgybsqosnsctuftr';                               //SMTP password
+                                $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+                                $mail->Port       = 465; 
+
+                                $mail->Username   = 'voiceofyouth.ethiopia@yahoo.com';                   //SMTP username
+                                $mail->Password   = 'pegadbixgzfbetzg';
                                 
                                 // Recipient
-                                $mail->setFrom('voiceofyouth.ethiopia@gmail.com', 'Voice of Youth');
+                                $mail->setFrom('voiceofyouth.ethiopia@yahoo.com', 'Voice of Youth');
                                 $mail->AddAddress($email_to);
 
 
