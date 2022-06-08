@@ -163,6 +163,7 @@ When greeted with the front page You have the option to read the top rated Artic
 ## Issues
 
 ! _A latest issue since the end of may 2022 is that less secure option inside google accounts is disabled. that will cause our phpmailer to not send messages to the users of our site._
+ To fix this issue replace the files named "php.ini" and "sendmail.ini" which are found inside the xampp php and sendmail directories with the files found respectively within the root folder of our project.
 
 Different issues may arise while testing out this website. 
 
@@ -181,6 +182,8 @@ Different issues may arise while testing out this website.
  - _Browser Incompatibility_
    
    Try using chrome for viewing the website and development.
+
+   
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
