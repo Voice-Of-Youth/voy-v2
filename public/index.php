@@ -45,7 +45,7 @@
             $image = $_SESSION["userprofileimg"];
             echo "<li class=\"navbar-menu-item\">";
             // echo "<a href='../application/view/login.php'>Bookmarks</a>";
-            echo "<a href='../application/view/login.php' class='navbar-link link'>";
+            echo "<a href='./index.php' class='navbar-link link'>";
             echo "<i class='fa-solid fa-bookmark'></i>";
             echo "<span>Favorites</span>";
             echo "</a>";

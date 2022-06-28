@@ -101,7 +101,7 @@ include '../../controller/connection.inc.php';
           </br>
             </p>
             <!--  <div class="fakeimg" style="height:200px;">Image</div> -->
-            <img src="../../../public/images/sexed.jpeg" style = "text-align: center">
+            <img src="../../../public/images/Sex_Ed_1.jpg" style = "text-align: center">
             <h3>It encourages sex</h3>
             <p>Critics suggest sex ed will encourage children to have sex, yet research suggests the opposite is true. A study by the Guttmacher Institute found that "there is now clear evidence that sexuality education programmes can help young people to delay sexual activity."  A UNESCO report found children who are taught CSE tend to have less sex, fewer sexual partners and reduced sexual risk-taking.</p>
             <h3>It normalizes teenage sex</h3>
