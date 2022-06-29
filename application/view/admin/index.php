@@ -12,9 +12,15 @@ include('includee/navbar.php');
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                <form action ="./addons/pdf.php" method="POST">
+                <div style="display: flex; gap: 1rem">
+                    <!-- <form action ="./CSV/import.php" method="POST" enctype ='multipart/form-data'>
+                        <input type = "file" name="file" accept=".csv">
+                        <button type= "submit" name="import" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"> Import </button>
+                    </form> -->
+                    <form action ="./addons/pdf.php" method="POST">
                         <button type= "submit" name="btn_pdf" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"> Generate Report </button>
                     </form>
+                </div>
             </div>
 
             <!-- Content Row -->
@@ -81,7 +87,7 @@ include('includee/navbar.php');
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Blogs
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
                                     </div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
 

@@ -7,7 +7,7 @@ if(isset($_POST['registerbtn']))
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['confirmpassword'];
-    $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
+    $hashedpwd = crypt($password, PASSWORD_DEFAULT);
    
 
     // $email_query = "SELECT * FROM Adregister WHERE email='$email' ";

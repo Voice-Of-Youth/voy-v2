@@ -68,7 +68,7 @@ include('includee/navbar.php');
 
         <div class="card-body">
 <!-- 
-            ?php
+            <?php
                 // include_once('Adminadd.php');
                 if(isset( $_SESSION['success'])& $_SESSION['success'] != '')
                 {
