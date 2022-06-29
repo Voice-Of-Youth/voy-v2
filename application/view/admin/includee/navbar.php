@@ -48,6 +48,12 @@
                     <span>Admin Profiles</span>
                 </a>
 
+                <li class="nav-item">
+                <a class="nav-link collapsed" href="to_be_validated.php" >
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Approvals</span>
+                </a>
+
                 </a>
                 <!-- <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
