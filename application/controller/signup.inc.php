@@ -25,6 +25,11 @@
       exit();
     }
 
+    if(validatePassword($password) !== false) {
+      header("location: ../view/signup.php?error=invalidpassword");
+      exit();
+    }
+
     if(invalidPasswordRepeat($password, $passwordrpt) !== false) {
       header("location: ../view/signup.php?error=passwordsdontmatch");
       exit();
@@ -36,7 +41,7 @@
     }
     
     createUser($conn, $username, $fullname, $password, $email);
-    session_start();
+    // session_start();
     $_SESSION["useremail"] = $email;
     $_SESSION["userfullname"] = $fullname;
     $_SESSION["username"] = $username;

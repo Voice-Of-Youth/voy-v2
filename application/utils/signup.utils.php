@@ -5,8 +5,15 @@
         } else { return false; }
     }
 
+
     function invalidUserName($username) {
         if(!preg_match("/^[a-zA-z0-9]*$/", $username)) {
+            return true;
+        } else { return false; }
+    }
+
+    function validatePassword($password) {
+        if(!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,25}$/", $password)) {
             return true;
         } else { return false; }
     }

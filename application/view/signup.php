@@ -93,6 +93,8 @@
             } else if($_GET["error"] == "none") {
               echo "<p>successfully logged in</p>";
               header("location: index.php");
+            } else if($_GET["error"] == "invalidpassword") {
+              echo "<p>Password must contain one uppercase, lowercase, number and special character with a minimum of 8 length and maximum of 25</p>";
             }
           }
         ?>
