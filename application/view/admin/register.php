@@ -98,7 +98,7 @@ include('includee/navbar.php');
                             <th> ID </th>
                             <th>Username </th>
                             <th>Email </th>
-                            <th>Password</th>
+                            <!-- <th>Password</th> -->
                             <!-- <th>UserType</th> -->
                             <th>EDIT</th>
                             <th>DELETE</th>
@@ -116,7 +116,7 @@ include('includee/navbar.php');
                             <td> <?php echo $row['AdminId'] ?></td>
                             <td> <?php echo $row['username']  ?>  </td>
                             <td> <?php echo $row['email'] ?> </td>
-                            <td> <?php echo $row['password'] ?> </td>
+                            <!-- <td> ?php echo $row['password'] ?> </td> -->
                             <td> 
                             <form action="editreg.php" method="POST">
                             <input type="hidden" name="edit_id" value="<?php echo $row['AdminId'] ?>">

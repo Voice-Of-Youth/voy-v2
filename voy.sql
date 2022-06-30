@@ -26,9 +26,9 @@ CREATE TABLE `adregister` (
   `AdminId` int(32) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `email` varchar(32) NOT NULL,
-  `password` varchar(32) NOT NULL,
+  `password` varchar(128) NOT NULL,
   PRIMARY KEY (`AdminId`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `adregister` (
 
 LOCK TABLES `adregister` WRITE;
 /*!40000 ALTER TABLE `adregister` DISABLE KEYS */;
-INSERT INTO `adregister` VALUES (1,'Nahom','natnaelmenelik@gmail.com','123456');
+INSERT INTO `adregister` VALUES (1,'Nahom','natnaelmenelik@gmail.com','123456'),(29,'natishimelis','natishimelisg@gmail.com','Nati@1234'),(30,'massbu','mahlet59@gmail.com','mahlet59');
 /*!40000 ALTER TABLE `adregister` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +123,7 @@ CREATE TABLE `image` (
 
 LOCK TABLES `image` WRITE;
 /*!40000 ALTER TABLE `image` DISABLE KEYS */;
-INSERT INTO `image` VALUES (18,'nmktad','nmktad - 2022.06.28 - 11.32.01am.jpg'),(19,'natishimelis','natishimelis - 2022.06.28 - 07.42.02pm.jpg');
+INSERT INTO `image` VALUES (18,'nmktad','nmktad - 2022.06.28 - 11.32.01am.jpg'),(19,'natishimelis','natishimelis - 2022.06.29 - 10.57.12pm.jpg');
 /*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,17 +159,14 @@ DROP TABLE IF EXISTS `submittions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `submittions` (
-  `SubID` int(11) NOT NULL AUTO_INCREMENT,
-  `FullName` varchar(128) NOT NULL,
-  `Url` varchar(256) DEFAULT NULL,
-  `File` varchar(256) DEFAULT NULL,
-  `Approved` tinyint(1) NOT NULL,
+  `SubID` int(11) NOT NULL,
+  `Article_title` varchar(128) NOT NULL,
+  `Article_content` text NOT NULL,
+  `Category` varchar(128) NOT NULL,
+  `Author` varchar(128) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `UserID` int(11) NOT NULL,
-  PRIMARY KEY (`SubID`),
-  KEY `UserID` (`UserID`),
-  CONSTRAINT `submittions_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `user` (`UserID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+  `UserID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,7 +175,7 @@ CREATE TABLE `submittions` (
 
 LOCK TABLES `submittions` WRITE;
 /*!40000 ALTER TABLE `submittions` DISABLE KEYS */;
-INSERT INTO `submittions` VALUES (11,'Nahom Temam','','../../storage/article_uploads/Nahom TemamOS2.docx',0,'2022-05-26 12:14:39',2);
+INSERT INTO `submittions` VALUES (11,'Nahom Temam','','','','2022-05-26 09:14:39',2),(12,'Test','Test','Test','NahomTM','2022-06-07 02:24:55',2),(13,'test 2','<p><em><strong>test</strong></em> this <u>paragraph</u></p>\r\n',' any','NahomTM','2022-06-07 08:33:29',2),(18,'test4','<p>hello again</p>\r\n','test4','Anonymous','2022-06-08 12:49:43',72);
 /*!40000 ALTER TABLE `submittions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,4 +250,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-29 23:54:01
+-- Dump completed on 2022-06-30 11:17:18

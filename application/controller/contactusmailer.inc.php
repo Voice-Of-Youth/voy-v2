@@ -48,6 +48,7 @@ $mail = new PHPMailer(true);
     echo 'Mailer Error: '.$mail->ErrorInfo;
    }else {
     echo 'Message has been sent';
+    header("Refresh:3; url = ../../");
    }
    
 }

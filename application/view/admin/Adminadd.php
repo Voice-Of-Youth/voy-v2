@@ -7,7 +7,6 @@ if(isset($_POST['registerbtn']))
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['confirmpassword'];
-    $hashedpwd = crypt($password, PASSWORD_DEFAULT);
    
 
     // $email_query = "SELECT * FROM Adregister WHERE email='$email' ";
@@ -27,7 +26,7 @@ if(isset($_POST['registerbtn']))
     // {
         if($password === $cpassword)
         {
-            $query = "INSERT INTO adregister (username, email, password) VALUES ('$username','$email','$hashedpwd')";
+            $query = "INSERT INTO adregister (username, email, password) VALUES ('$username','$email','$password')";
             $query_run = mysqli_query($connection, $query);
             
             if($query_run)
