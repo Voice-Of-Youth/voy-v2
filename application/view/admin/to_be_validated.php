@@ -17,13 +17,6 @@ $postData = mysqli_num_rows($execute);
 </head>
 
 <body>
-<?php 
-    if(isset($_POST['logout'])) {
-      session_start();
-      session_unset();
-      session_destroy();
-    }
-  ?>
 
   <nav class="navbar">
     <div class="navbar-container">

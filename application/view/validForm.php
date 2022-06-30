@@ -12,24 +12,17 @@
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
-    header("Location: http://localhost/voy/src/views/signin.php");
+    header("Location: login.php");
 }
 
 if (isset($_SESSION['IsWriter']) && $_SESSION['IsWriter']) {
 
-    header("Location: http://localhost/voy/src/views/writer.php");
+    header("Location: Article.php");
 }
 
 ?>
 
 <body>
-<?php 
-    if(isset($_POST['logout'])) {
-      session_start();
-      session_unset();
-      session_destroy();
-    }
-  ?>
 
   <nav class="navbar">
     <div class="navbar-container">
@@ -90,7 +83,7 @@ if (isset($_SESSION['IsWriter']) && $_SESSION['IsWriter']) {
     </div>
   </nav>
     
-    <form enctype="multipart/form-data" action="../../model/validform.php" method="post">
+    <form enctype="multipart/form-data" action="../controller/validform.inc.php" method="post">
         <div class="login-box">
             <h1>Application Form</h1>
             <div class="textbox">
