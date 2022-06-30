@@ -1,3 +1,6 @@
+.mainCont{
+    height: 500px;
+}
 #repBar, #repBar ul{
     margin: 0;
     padding: 0;

@@ -93,7 +93,7 @@
                 exit();
             }
         } else {
-            header('Location: to_be_validated.php');
+            header('Location: Article_list.php');
             exit();
         }
         ?>
@@ -103,8 +103,8 @@
         </div>
         <div>
             <br>
-            <h4>By: </h4>
-            <?php echo $post['Author']; ?>
+            <h4>By: <?php echo $post['Author']; ?> </h4>
+           
         </div>
 
     </div>
@@ -120,7 +120,7 @@
           <div class="footer-link-items">
             <h2 class="footer-title">About us</h2>
             <a href="./aboutus.php" class="link footer-link">About Us</a>  
-            <a href="#" class="link footer-link">Blogs</a>
+            <a href="./Article_list.php" class="link footer-link">Blogs</a>
             <a href="#" class="link footer-link">Testimonials</a>
           </div>
         </div>
