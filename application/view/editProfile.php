@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+    require('../controller/connection.inc.php');
+
+    $uname = $_SESSION["username"];
+    $uid = $_SESSION["userid"];
+    
+    $profiledata = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM User WHERE `UserID` = $uid;"));
+
+    $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM image WHERE username = '$uname'"));
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +37,7 @@
       
       <ul class="navbar-menu menu">
         <?php 
-          session_start();
+        //   session_start();
           if(isset($_SESSION["userid"])) {
             echo "<li class=\"navbar-menu-item\">";
             // echo "<a href='../application/view/login.php'>Bookmarks</a>";
@@ -85,9 +96,17 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Email</label>
                                     <div class="col-sm-4">
-                                        <input class="form-control" type="text" name="Email"
-                                        placeholder="Email" ng-model="me.email">
+                                    <?php 
+                                        $email = $profiledata['Email'];
+                                      echo "     
+                                    <div class='col-sm-9'>
+                                        <p class='text-muted mb-0'>$email</p>
                                     </div>
+                                     ";
+                                    ?>
+                                        <!-- <input class="form-control" type="text" name="Email"
+                                        placeholder="Email" ng-model="me.email">
+                                    </div> -->
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">User Name</label>
