@@ -1,16 +1,38 @@
-<html lang="en">
+<?php
+require_once('../controller/connection.inc.php');
+session_start();
+if(!$_SESSION['username'])
+{
+    header('Location: ./login.php');
+}
+$id = $_SESSION["userid"];
+$query = "SELECT * FROM submittions WHERE UserID = ? ORDER BY UserID DESC";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$postData = mysqli_num_rows($result);
+?>
+<html>
 
 <head>
-<meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="UTF_8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel='stylesheet' type='text/css' media='screen' href='../../public/styles/detail.css'>
-    <title>Detail</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../public/styles/article_list.css'>
+    <title>Article Lists</title>
 </head>
 
 <body>
+
+<?php 
+    if(isset($_POST['logout'])) {
+      session_unset();
+      session_destroy();
+      header('Location: ./login.php');
+    }
+  ?>
 
   <nav class="navbar">
     <div class="navbar-container">
@@ -34,7 +56,7 @@
           </form>
         </li>
         <?php 
-          session_start();
+          
           if(isset($_SESSION["userid"])) {
             $image = $_SESSION["userprofileimg"];
             echo "<li class=\"navbar-menu-item\">";
@@ -70,36 +92,20 @@
       </ul>
     </div>
   </nav>
-    <div class="main">
-        <?php
-        if (isset($_GET['id'])) {
-            require_once('../controller/connection.inc.php');
-            require_once('../utils/login.utils.php');
-
-            $authId = mysqli_real_escape_string($conn, $_GET['id']);
-            $query = "SELECT * FROM submittions WHERE SubID = $authId";
-            $execute = mysqli_query($conn, $query);
-            $post = mysqli_fetch_assoc($execute);
-            if ($authId != $post['SubID']) {
-                header('refresh:3; url = to_be_validated.php');
-                echo "This Id doesn't exist on our server";
-                exit();
-            }
-        } else {
-            header('Location: to_be_validated.php');
-            exit();
-        }
-        ?>
-        <h1><?php echo $post['Article_title']; ?></h1>
-        <div class="content">
-            <?php echo $post['Article_content']; ?>
+    
+  <div class="main">
+        <div class="head1">
+            <h1>LIST OF PUBLISHED BLOGS</h1>
         </div>
-        <div>
-            <br>
-            <h4>By: </h4>
-            <?php echo $post['Author']; ?>
+        <div class="articleList">
+            <ul>
+                <?php while ($row = $result->fetch_assoc()) { ?>
+                    <li>
+                        <a href="Article_details.php?id=<?php echo $row['SubID']; ?>"><?php echo $row['Article_title']; ?></a>
+                    </li>
+                <?php } ?>
+            </ul>
         </div>
-
     </div>
     <footer class="footer">
     <div class="footer-container">
@@ -113,7 +119,7 @@
           <div class="footer-link-items">
             <h2 class="footer-title">About us</h2>
             <a href="./aboutus.php" class="link footer-link">About Us</a>  
-            <a href="#" class="link footer-link">Blogs</a>
+            <a href="./Article_list.php" class="link footer-link">Blogs</a>
             <a href="#" class="link footer-link">Testimonials</a>
           </div>
         </div>
@@ -161,7 +167,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/index.js"></script>
-
 </body>
 
 </html>

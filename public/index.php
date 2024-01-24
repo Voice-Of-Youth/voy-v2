@@ -279,6 +279,7 @@
           <div class="footer-link-items">
           <h2 class="footer-title">Services</h2>
             <a href="../application/view/writers.php" class="link footer-link">Authoring</a>
+            <a href="../application/view/publishedArt.php" class="link footer-link">Published Articles</a>
           </div>
           <div class="footer-link-items">
             <h2 class="footer-title">Legal</h2>
